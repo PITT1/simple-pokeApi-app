@@ -8,8 +8,8 @@ const type1 = document.getElementById('type1');
 let pokemon = "";
 
 const printTypes = (type_0, type_1) => {
-    type0.className = "none";
-    type1.className = "none";
+    type0.className = "";
+    type1.className = "";
     type0.classList.add(type_0);
     type1.classList.add(type_1);
 }
