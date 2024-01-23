@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background: linear-gradient(45deg, rgb(164, 29, 218), rgb(17, 122, 192));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+    font-weight: 100;
+    margin-top: 20PX;
+}
+
+.card {
+    height: 530px;
+    width: 400px;
+    background-color: rgba(0, 217, 255, 0);
+    border: 4px solid rgba(24, 151, 201, 0.678);
+    border-radius: 10px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.sprite {
+    height: 90%;
+    width: 90%;
+    background-color: rgba(26, 55, 187, 0.233);
+    background-repeat: no-repeat;
+    object-fit: contain;
+    background-position: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.name{
+    font-size: 30px;
+    border: 4px solid rgba(24, 151, 201, 0.678);
+    border-bottom: none;
+    border-radius: 20px 20px 0px 0px;
+    padding: 5px 20px;
+    cursor: default;
+}
+
+.input {
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: transparent;
+    border: 4px solid rgba(24, 151, 201, 0.678);
+    font-size: 20px;
+    text-align: center;
+    width: 250px;
+}
+
+.buscar {
+    padding: 10px 20px;
+    background: transparent;
+    border: 4px solid rgba(24, 151, 201, 0.678);
+    border-radius: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.buscar:hover {
+    color: aliceblue;
+    border-color: aliceblue;
+    background-color: rgba(100, 21, 173, 0.329);
+}
+
+.buscar:active {
+    transform: translateY(10px);
+}
+
+.types {
+    display: flex;
+}
+
+.types div {
+    padding: 5px 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 20px;
+}
+
+.grass {
+    position: relative;
+    background-color: rgb(69, 177, 26);
+    color: rgb(8, 46, 8);
+    border: 2px solid rgb(15, 78, 15);
+}
+
+.grass::before {
+    content: 'Grass';
+}
+
+.poison {
+    position: relative;
+    background-color: rgb(93, 15, 196);
+    color: rgb(0, 0, 0);
+    border: 2px solid rgb(77, 0, 177);
+}
+
+.poison::before {
+    content: 'Poison';
+}
+
+.dark {
+    position: relative;
+    background-color: rgb(32, 27, 39);
+    color: rgb(121, 118, 118);
+    border: 2px solid rgb(40, 10, 80);
+}
+
+.dark::before {
+    content: 'Dark';
+}
+
+.dragon {
+    position: relative;
+    background-color: rgb(30, 165, 189);
+    color: rgb(203, 210, 214);
+    border: 2px solid rgb(146, 146, 146);
+}
+
+.dragon::before {
+    content: 'Dragon';
+}
+
+.electric {
+    position: relative;
+    background-color: rgb(203, 206, 16);
+    color: rgb(2, 4, 5);
+    border: 2px solid rgb(109, 114, 38);
+}
+
+.electric::before {
+    content: 'Electric';
+}
+
+.fairy {
+    position: relative;
+    background-color: rgb(167, 18, 100);
+    color: rgb(54, 8, 43);
+    border: 2px solid rgb(204, 87, 132);
+}
+
+.fairy::before {
+    content: 'fairy';
+}
+
+.fighting {
+    position: relative;
+    background-color: rgb(189, 105, 10);
+    color: rgb(48, 25, 3);
+    border: 2px solid rgb(173, 71, 3);
+}
+
+.fighting::before {
+    content: 'Fighting';
+}
+
+.fire {
+    position: relative;
+    background-color: rgb(199, 10, 10);
+    color: rgb(59, 7, 7);
+    border: 2px solid rgb(243, 0, 0);
+}
+
+.fire::before {
+    content: 'Fire';
+}
+
+.flying {
+    position: relative;
+    background-color: rgb(160, 160, 160);
+    color: rgb(248, 248, 248);
+    border: 2px solid rgb(104, 104, 104);
+}
+
+.flying::before {
+    content: 'Flying';
+}
+
+.ghost {
+    position: relative;
+    background-color: rgb(124, 34, 209);
+    color: rgb(182, 134, 236);
+    border: 2px solid rgb(55, 29, 73);
+}
+
+.ghost::before {
+    content: 'Ghost';
+}
+
+.ground {
+    position: relative;
+    background-color: rgb(189, 108, 3);
+    color: rgb(194, 167, 141);
+    border: 2px solid rgb(73, 32, 5);
+}
+
+.ground::before {
+    content: 'Ground';
+}
+
+.ice {
+    position: relative;
+    background-color: rgb(23, 233, 215);
+    color: rgb(18, 82, 76);
+    border: 2px solid rgb(158, 214, 218);
+}
+
+.ice::before {
+    content: 'Ice';
+}
+
+.normal {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    color: rgb(54, 54, 54);
+    border: 2px solid rgb(114, 114, 114);
+}
+
+.normal::before {
+    content: 'Normal';
+}
+
+.psychic {
+    position: relative;
+    background-color: rgb(255, 132, 152);
+    color: rgb(105, 55, 97);
+    border: 2px solid rgb(255, 221, 253);
+}
+
+.psychic::before {
+    content: 'Psychic';
+}
+
+.rock {
+    position: relative;
+    background-color: rgb(107, 43, 13);
+    color: rgb(114, 98, 93);
+    border: 2px solid rgb(119, 53, 53);
+}
+
+.rock::before {
+    content: 'Rock';
+}
+
+.steel {
+    position: relative;
+    background-color: rgb(155, 155, 155);
+    color: rgb(0, 0, 0);
+    border: 2px solid rgb(75, 75, 75);
+}
+
+.steel::before {
+    content: 'Steel';
+}
+
+.water {
+    position: relative;
+    background-color: rgb(1, 21, 204);
+    color: rgb(130, 132, 218);
+    border: 2px solid rgb(50, 49, 95);
+}
+
+.water::before {
+    content: 'Water';
+}
+
+.bug {
+    position: relative;
+    background-color: rgb(8, 117, 5);
+    color: rgb(16, 65, 4);
+    border: 2px solid rgb(175, 175, 175);
+}
+
+.bug::before {
+    content: 'Bug';
+}
