@@ -5,40 +5,34 @@ const buscar = document.querySelector('.buscar');
 const type0 = document.getElementById('type0');
 const type1 = document.getElementById('type1');
 
-let pokemon = "";
+var tipo1 = "";
 
-const printTypes = (type_0, type_1) => {
-    type0.className = "";
-    type1.className = "";
-    type0.classList.add(type_0);
-    type1.classList.add(type_1);
-}
+const card = (name, sprite, objectType0, objectType1) => ({
+    name: name,
+    sprite: sprite,
+    objectType0: objectType0,
+    objectType1: objectType1,
+    draw () {
+        nameBox.innerText = this.name;
+        spriteBox.style.backgroundImage = this.sprite;
+        type0.className = "";
+        type1.className = "";
+        type0.classList.add(this.objectType0);
+        type1.classList.add(this.objectType1);
+    }
+})
 
 async function fetchData(){
     try {
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
-        const data = await response.json();
-        nameBox.innerText = data.name;
-        spriteBox.style.backgroundImage = `url("${data.sprites.front_default}")`;
-        try {
-            var tipo1 = data.types[1].type.name;
-        } catch (err) {
-            var tipo1 = "none";
+        for (let i = 1; i < 15; i++) {
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
+            const data = await response.json();
+            const tarjeta = card(data.name, `url("${data.sprites.front_default}")`, data.types[0].type.name, data.types[1] ? data.types[1].type.name : "none");
+            tarjeta.draw();
         }
-        printTypes(data.types[0].type.name, tipo1);
     } catch (error) {
         console.alert("error");
     }
 }
 
-buscar.addEventListener('click', () => {
-    pokemon = input.value;
-    fetchData();
-});
-
-document.addEventListener('keydown', e => {
-    if (e.key == 'Enter') {
-        pokemon = input.value;
-        fetchData();
-    }
-})
+fetchData();

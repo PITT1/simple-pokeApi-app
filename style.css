@@ -54,6 +54,7 @@ header {
 .sprite {
     height: 100px;
     width: 100px;
+    margin-top: 20px;
     background-color: rgba(61, 207, 212, 0.233);
     background-repeat: no-repeat;
     object-fit: contain;
