@@ -19,7 +19,7 @@ async function fetchData(){
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
         const data = await response.json();
         nameBox.innerText = data.name;
-        spriteBox.style.backgroundImage = `url("${data.sprites.other.dream_world.front_default}")`;
+        spriteBox.style.backgroundImage = `url("${data.sprites.front_default}")`;
         try {
             var tipo1 = data.types[1].type.name;
         } catch (err) {
