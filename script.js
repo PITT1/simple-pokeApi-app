@@ -1,9 +1,5 @@
-const spriteBox = document.querySelector('.sprite');
-const nameBox = document.querySelector('.name');
 const input = document.querySelector('.input');
 const buscar = document.querySelector('.buscar');
-const type0 = document.getElementById('type0');
-const type1 = document.getElementById('type1');
 const contenedor = document.querySelector('.container');
 
 var tipo1 = "";
