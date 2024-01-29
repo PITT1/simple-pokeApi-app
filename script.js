@@ -45,7 +45,7 @@ async function fetchData(){
             typesContent.appendChild(type1Content)
             tarjetaContent.appendChild(nameContent);
 
-            pokemonNames.push(nameContent.textContent);
+            pokemonNames.push(tarjetaContent.textContent);
         }
     } catch (error) {
         console.alert("error");
@@ -60,11 +60,11 @@ buscar.addEventListener('click', ()=>{
 
 const searchPokemon = (query) => {
     let results = [];
-    for(let name of pokemonNames){
+    pokemonNames.forEach( name => {
         if(name.toLowerCase().includes(query.toLowerCase())){
             results.push(name);
         }
-    }
+    });
     return results;
 };
 
