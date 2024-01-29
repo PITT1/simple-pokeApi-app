@@ -2,11 +2,10 @@ const input = document.querySelector('.input');
 const buscar = document.querySelector('.buscar');
 const contenedor = document.querySelector('.container');
 
-var tipo1 = "";
 
 async function fetchData(){
     try {
-        for (let i = 1; i < 1026; i++) {
+        for (let i = 1; i < 152; i++) {
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
             const data = await response.json();
 
@@ -51,3 +50,8 @@ async function fetchData(){
 }
 
 fetchData();
+
+buscar.addEventListener('click', ()=>{
+    const cardsDom = document.querySelectorAll('.card');
+    console.log(cardsDom[input.value - 1]);
+})

@@ -25,7 +25,7 @@ h1 {
 
 header {
     display: flex;
-    justify-content: end;
+    justify-content:space-between;
     align-items: center;
     height: auto;
     width: 100%;
@@ -55,6 +55,13 @@ header {
     justify-content: center;
     position: relative;
     font-size: 20px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgb(0, 0, 0);
 }
 
 .number {
@@ -97,6 +104,22 @@ header {
     font-size: 20px;
     text-align: center;
     width: 250px;
+    transition: 0.3s ease;
+}
+
+.input::placeholder {
+    color: black;
+    transition: .3s ease;
+}
+
+.input:focus::placeholder {
+    color: aliceblue;
+}
+
+.input:focus {
+    color: aliceblue;
+    background-color: rgba(100, 21, 173, 0.329);
+    border-color: aliceblue;
 }
 
 .buscar {
