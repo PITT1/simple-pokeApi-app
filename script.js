@@ -2,6 +2,7 @@ const input = document.querySelector('.input');
 const buscar = document.querySelector('.buscar');
 const contenedor = document.querySelector('.container');
 
+var pokemonNames = [];
 
 async function fetchData(){
     try {
@@ -43,6 +44,8 @@ async function fetchData(){
             typesContent.appendChild(type0Content);
             typesContent.appendChild(type1Content)
             tarjetaContent.appendChild(nameContent);
+
+            pokemonNames.push(nameContent.textContent);
         }
     } catch (error) {
         console.alert("error");
@@ -52,6 +55,23 @@ async function fetchData(){
 fetchData();
 
 buscar.addEventListener('click', ()=>{
-    const cardsDom = document.querySelectorAll('.card');
-    console.log(cardsDom[input.value - 1]);
+    console.log(pokemonNames[4]);
+})
+
+const searchPokemon = (query) => {
+    let results = [];
+    for(let name of pokemonNames){
+        if(name.toLowerCase().includes(query.toLowerCase())){
+            results.push(name);
+        }
+    }
+    return results;
+};
+
+input.addEventListener('input', () => {
+    const query = input.value;
+    if (query.length > 0) {
+        const results = searchPokemon(query);
+        console.log(results);
+    }
 })
