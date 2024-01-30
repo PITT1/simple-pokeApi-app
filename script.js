@@ -55,8 +55,9 @@ async function fetchData(){
 
 fetchData();
 
-buscar.addEventListener('click', ()=>{
-    console.log(pokemonNames[4]);
+buscar.addEventListener('click', () => {
+    console.log(input.value);
+    autoSearchDom.innerHTML = '';
 })
 
 const searchPokemon = (query) => {
@@ -73,10 +74,15 @@ input.addEventListener('input', () => {
     const query = input.value;
     if (query.length > 0) {
         const results = searchPokemon(query);
-        console.log(results);
         autoSearchDom.innerHTML = "";
         results.map(name => {
             autoSearchDom.innerHTML += `<div class="searchItem">${name}</div>`;
+        })
+        const searchItem = document.querySelectorAll('.searchItem');
+        searchItem.forEach(item => {
+            item.addEventListener('click', () => {
+                input.value = item.innerText;
+            })
         })
     }
     if (query == 0) {
