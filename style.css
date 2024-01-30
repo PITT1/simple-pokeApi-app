@@ -33,6 +33,43 @@ header {
     padding: 20px;
 }
 
+header div {
+    display: flex;
+}
+
+.inputContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: auto;
+}
+
+.autoSearch {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 100%;
+    left: 0;
+    height: auto;
+    width: 100%;
+}
+
+.searchItem {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.664);
+    text-align: center;
+    padding: 10px 0px;
+    color: rgb(0, 0, 0);
+    z-index: 2;
+    transition: .3s ease;
+    cursor: pointer;
+}
+
+.searchItem:hover {
+    transform: scale(1.1);
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;

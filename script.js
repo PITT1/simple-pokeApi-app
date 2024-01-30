@@ -1,6 +1,7 @@
 const input = document.querySelector('.input');
 const buscar = document.querySelector('.buscar');
 const contenedor = document.querySelector('.container');
+const autoSearchDom = document.querySelector('.autoSearch');
 
 var pokemonNames = [];
 
@@ -73,5 +74,12 @@ input.addEventListener('input', () => {
     if (query.length > 0) {
         const results = searchPokemon(query);
         console.log(results);
+        autoSearchDom.innerHTML = "";
+        results.map(name => {
+            autoSearchDom.innerHTML += `<div class="searchItem">${name}</div>`;
+        })
+    }
+    if (query == 0) {
+        autoSearchDom.innerText = "";
     }
 })
