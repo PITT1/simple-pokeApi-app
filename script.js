@@ -56,8 +56,17 @@ async function fetchData(){
 fetchData();
 
 buscar.addEventListener('click', () => {
-    console.log(input.value);
     autoSearchDom.innerHTML = '';
+    const scrollelement = document.querySelectorAll('.name');
+    scrollelement.forEach(name => {
+        if (input.value.includes(name.innerText)) {
+            name.scrollIntoView({behavior:"smooth", block:"center"});
+            name.parentElement.className = 'card cardScrollAnimation';
+            setTimeout(() => {
+                name.parentElement.className = 'card'
+            }, 3000);
+        }
+    });
 })
 
 const searchPokemon = (query) => {

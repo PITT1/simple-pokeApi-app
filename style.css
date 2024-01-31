@@ -97,6 +97,34 @@ header div {
     transition: .3s ease;
 }
 
+.cardScrollAnimation {
+    animation-name: search;
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-delay: 1s;
+    animation-iteration-count: initial;
+}
+
+@keyframes search {
+    0% {
+        transform: rotate(0deg);
+        background-color: rgba(199, 199, 199, 0.781);
+    }
+    30%{
+        transform: rotate(10deg);
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 10px 20px black;
+    }
+    60%{
+        transform: rotate(-10deg);
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 10px 20px black;
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
 .card:hover {
     transform: scale(1.1);
     box-shadow: 0 0 15px rgb(0, 0, 0);
