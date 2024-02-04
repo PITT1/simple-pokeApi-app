@@ -7,7 +7,7 @@ var pokemonNames = [];
 
 async function fetchData(){
     try {
-        for (let i = 1; i < 1026; i++) {
+        for (let i = 1; i < 500; i++) {
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
             const data = await response.json();
 
